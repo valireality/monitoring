@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Monitor Configuration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="tabs">
+        <a href="{{ url_for('config_system') }}" class="tab {% if tab == 'system' %}active{% endif %}">System</a>
+        <a href="{{ url_for('config_network') }}" class="tab {% if tab == 'network' %}active{% endif %}">Network</a>
+        <a href="{{ url_for('config_services') }}" class="tab {% if tab == 'services' %}active{% endif %}">Services</a>
+        <a href="{{ url_for('config_api') }}" class="tab {% if tab == 'api' %}active{% endif %}">External APIs</a>
+    </div>
+
+    <div class="content">
+        <h2>Configuration - {{ tab.capitalize() }}</h2>
+        <p>This is where you’ll configure {{ tab }} monitoring.</p>
+        <!-- Form elements will go here -->
+    </div>
+</body>
+</html>
